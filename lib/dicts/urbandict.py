@@ -16,8 +16,8 @@ class UrbanDict(DictBase):
             if "list" in raw_res:
                 items = raw_res["list"]
                 for item in items:
-                    #formatted_res.append([{"Word":item['word']}, {"Definition":item['definition']}, {"Example":item['example']}])
-                    formatted_res.append(item)
+                    formatted_res.append([{"Word":item['word']}, {"Definition":item['definition']}, {"Example":item['example']}])
+                    #formatted_res.append(item)
             return formatted_res
 
         return format
