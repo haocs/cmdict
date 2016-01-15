@@ -2,11 +2,12 @@
 
 import sys, pprint
 from lib.dicts.urbandict import UrbanDict
+from lib.dicts.mwdict import MWDict
 
 def main():
     if len(sys.argv) < 2:
         raise TypeError("Input needed!")
-    dict = UrbanDict()
+    dict = MWDict()
     res = dict.lookup(sys.argv[1])
     p_print(res)
 
