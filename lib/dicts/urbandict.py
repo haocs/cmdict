@@ -16,8 +16,8 @@ class UrbanDict(DictBase):
             if "list" in raw_res:
                 items = raw_res["list"]
                 for item in items:
-                    formatted_res.append([{"Word":item['word'].rstrip()}, {"Definition":item['definition'].rstrip()}, {"Example":item['example'].rstrip()}])
-                    #formatted_res.append(item)
+                    #formatted_res.append([{"Word":item['word'].rstrip()}, {"Definition":item['definition'].rstrip()}, {"Example":item['example'].rstrip()}])
+                    formatted_res.append(item)
             return formatted_res
 
         return format
@@ -28,6 +28,6 @@ class UrbanDict(DictBase):
         res = requests.get(url)
         result = {}
         if res.status_code == 200:
-            result = json.loads(res.text)
+            result = res.json()#deserialized as dict
         return result
 
